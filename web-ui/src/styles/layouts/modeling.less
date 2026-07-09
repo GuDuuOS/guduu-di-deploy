@@ -1,0 +1,52 @@
+.react-flow {
+  background-color: var(--guduu-canvas);
+
+  .react-flow__background pattern circle {
+    fill: #d8c3b0;
+  }
+
+  .react-flow__controls {
+    background: rgba(255, 253, 249, 0.96);
+    border: 1px solid var(--guduu-line);
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(103, 71, 47, 0.07);
+
+    button {
+      background: transparent;
+      border-bottom-color: var(--guduu-line);
+      color: var(--guduu-muted);
+
+      &:hover {
+        background: var(--guduu-accent-muted);
+        color: var(--guduu-accent);
+      }
+
+      svg {
+        fill: currentColor;
+      }
+    }
+  }
+
+  .react-flow__minimap {
+    background: rgba(255, 253, 249, 0.92);
+    border: 1px solid var(--guduu-line);
+    border-radius: 8px;
+    box-shadow: 0 5px 14px rgba(35, 55, 45, 0.08);
+  }
+}
+
+.adm-modeling-header {
+  .ant-btn-primary:not(:disabled) {
+    background: var(--guduu-accent);
+    border-color: var(--guduu-accent);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(184, 91, 24, 0.14);
+
+    &:hover,
+    &:focus {
+      background: #dc7027;
+      border-color: #dc7027;
+      color: #fff;
+    }
+  }
+}

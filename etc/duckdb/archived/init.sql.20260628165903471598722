@@ -1,0 +1,9 @@
+CREATE TABLE olist_customers_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_customers_dataset.parquet');
+CREATE TABLE olist_order_items_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_order_items_dataset.parquet');
+CREATE TABLE olist_orders_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_orders_dataset.parquet');
+CREATE TABLE olist_order_payments_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_order_payments_dataset.parquet');
+CREATE TABLE olist_products_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_products_dataset.parquet');
+CREATE TABLE olist_order_reviews_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_order_reviews_dataset.parquet');
+CREATE TABLE olist_geolocation_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_geolocation_dataset.parquet');
+CREATE TABLE olist_sellers_dataset AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/olist_sellers_dataset.parquet');
+CREATE TABLE product_category_name_translation AS select * FROM read_parquet('https://assets.getwren.ai/sample_data/brazilian-ecommerce/product_category_name_translation.parquet');

@@ -1,0 +1,68 @@
+# Guduu DI — 源码仓库忽略项（部署产物一律在 GUDUU_DEPLOY_ROOT）
+
+# 部署脚本本地配置（应放在部署目录 env/.env）
+scripts/.env
+scripts/.deploy-root
+scripts/.xray/
+
+# 若误在源码目录执行旧版脚本产生的产物
+runtime/
+# vendor/ 在线版通常不含；离线版 guduu-di 才自带 vendor/
+
+# vendor 运行时数据（若有）；精简包不含 vendor/python、vendor/bin
+vendor/
+ai-service/.env.*
+ai-service/config.yaml*
+!ai-service/tools/config/config.example.yaml
+!ai-service/tools/config/.env.dev.example
+ai-service/**/outputs/
+ai-service/*.csv
+ai-service/*.json
+ai-service/assertion.log
+ai-service/redis.*
+ai-service/tools/dev/.env
+
+# python
+.python-version
+__pycache__
+local_cache
+.ruff_cache
+.pytest_cache
+
+# web-ui
+web-ui/node_modules
+web-ui/.next
+web-ui/out
+web-ui/build
+web-ui/coverage
+web-ui/test-results
+web-ui/playwright-report
+web-ui/.yarn/install-state.gz
+web-ui/db.sqlite3
+web-ui/*.sqlite3
+
+# 环境变量
+.env*.local
+.env
+.env.ai
+
+# ide / os
+.idea
+.vscode/
+.DS_Store
+__MACOSX/
+*.pem
+
+# misc
+*.tsbuildinfo
+next-env.d.ts
+.tmp
+.deepeval-cache.json
+.deepeval_telemtry.txt
+
+# sqlite
+*.sqlite
+*.sqlite3
+
+# vercel
+.vercel

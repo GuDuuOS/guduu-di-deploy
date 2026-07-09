@@ -1,0 +1,36 @@
+:root {
+  .make-color-variables();
+  --disabled: @disabled-color;
+  --guduu-accent: @citrus-6;
+  --guduu-accent-soft: #fff5ed;
+  --guduu-accent-muted: @citrus-2;
+  --guduu-ink: #26221f;
+  --guduu-muted: #7f7771;
+  --guduu-line: #dfc9b5;
+  --guduu-bg: #f1e8df;
+  --guduu-panel: #fffaf4;
+  --guduu-sidebar: #fffaf4;
+  --guduu-canvas: #f1e8df;
+}
+
+body {
+  min-width: 360px;
+  background: var(--guduu-bg);
+  color: var(--guduu-ink);
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    'PingFang SC',
+    'Segoe UI',
+    sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  html body {
+    background: #fff;
+  }
+  h1.next-error-h1 {
+    border-right: 1px solid rgba(0, 0, 0, 0.3);
+  }
+}
