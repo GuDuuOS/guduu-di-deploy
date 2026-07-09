@@ -82,6 +82,7 @@ guduu_setup_mirrors() {
 
 guduu_setup_yarn_mirror() {
   [[ -n "${GUDUU_YARN_REGISTRY:-}" ]] && export YARN_REGISTRY="$GUDUU_YARN_REGISTRY"
+  return 0  # 不设镜像时上面 [[ ]] 返回非0,set -e 下会误退出——显式返回0
 }
 
 guduu_setup_maven_mirror() {
@@ -104,7 +105,11 @@ EOF
   fi
   export MAVEN_OPTS="${MAVEN_OPTS:-} -Dmaven.repo.local=$m2_repo"
   export MVNW_USERNAME= MVNW_PASSWORD=
-  [[ -f "$m2_settings" ]] && export MAVEN_CONFIG="$GUDUU_RUNTIME/m2"
+  # 用 -s 指定 settings.xml 传给 Maven(经 MAVEN_ARGS)。
+  # 原来 export MAVEN_CONFIG=<目录> 是**误用**:MAVEN_CONFIG 会被 mvn 当作命令行参数字符串,
+  # 于是那个目录路径被当成 lifecycle phase → "Unknown lifecycle phase" 编译失败。
+  [[ -f "$m2_settings" ]] && export MAVEN_ARGS="${MAVEN_ARGS:-} -s $m2_settings"
+  return 0  # 同上:不设镜像/无 settings 时,末行 [[ ]] 返回非0会误触发 set -e 退出
 }
 
 guduu_engine_jar_path() {
